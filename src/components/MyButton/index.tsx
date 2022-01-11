@@ -1,9 +1,11 @@
-import { Button } from '@chakra-ui/react'
+import { Button, Link } from '@chakra-ui/react'
 
 interface MyButtonProp {
     value: string
     marginTop?: string;
-    customW?: string
+    customW?: string;
+    anchor?: string;
+    tipo?: string;
 }
 
 export default function MyButton(props: MyButtonProp) {
@@ -17,8 +19,11 @@ export default function MyButton(props: MyButtonProp) {
             borderRadius='8px'
             h='60px'
             _hover={{
-                bg:'red.500'
+                bg: 'red.500'
             }}
+            as={Link}
+            href={props.anchor}
+
         >{props.value}</Button>
     )
 }
